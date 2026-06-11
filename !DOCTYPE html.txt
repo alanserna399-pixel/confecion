@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¿Quieres ser mi novia?</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        font-family: Arial, sans-serif;
+        overflow: hidden;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    h1 {
+        color: white;
+        font-size: 3em;
+        text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    }
+
+    button {
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        margin: 10px;
+        transition: 0.3s;
+    }
+
+    #si {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    #no {
+        background-color: #f44336;
+        color: white;
+        position: absolute;
+    }
+
+    #mensaje {
+        color: white;
+        font-size: 2em;
+        margin-top: 20px;
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>💖 ¿Quieres ser mi novia? 💖</h1>
+    <button id="si">Sí ❤️</button>
+    <button id="no">No 💔</button>
+
+    <div id="mensaje">
+        🎉 ¡Sabía que dirías que sí! 💕🥰
+    </div>
+</div>
+
+<script>
+const botonNo = document.getElementById("no");
+
+botonNo.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+
+    botonNo.style.left = x + "px";
+    botonNo.style.top = y + "px";
+});
+
+document.getElementById("si").addEventListener("click", () => {
+    document.querySelector("h1").style.display = "none";
+    document.getElementById("si").style.display = "none";
+    document.getElementById("no").style.display = "none";
+    document.getElementById("mensaje").style.display = "block";
+});
+</script>
+
+</body>
+</html>
